@@ -1,6 +1,6 @@
 /* #6 start the #external #action and say hello */
 console.log("App is alive");
-
+/**
 /**
  * #6 #Switcher function for the #channels name in the right app bar
  * @param channelName Text which is set
@@ -14,20 +14,16 @@ function switchChannel(channelName) {
 
     //#6 change the #channel #location
     document.getElementById('channel-location').innerHTML = 'by <a href="http://w3w.co/upgrading.never.helps" target="_blank"><strong>upgrading.never.helps</strong></a>';
-
+    
     /* #6 #liking channels on #click */
-    $('#channel-star').attr('src', 'http://ip.lfe.mw.tum.de/sections/star-o.png');
+    $('#channel-star').attr('src', 'https://ip.lfe.mw.tum.de/sections/star-o.png');
 
     /* #6 #highlight the selected #channel.
        This is inefficient (jQuery has to search all channel list items), but we'll change it later on */
-    $('#channels li').removeClass('selected');
-    $('#channels li:contains(' + channelName + ')').addClass('selected');
+       $('#section-channel-list li').removeClass('selected');
+       $('#section-channel-list li:contains(' + channelName + ')').addClass('selected');
 }
 
-/* #6 #liking a channel on #click */
-function star() {
-    $('#channel-star').attr('src', 'http://ip.lfe.mw.tum.de/sections/star.png');
-}
 
 /**
  * #6 #taptab selects the given tab
@@ -44,8 +40,9 @@ function selectTab(tabId) {
     $(tabId).addClass('selected');
 }
 
+
 /**
- * #6 #toggle (show/hide) the emojis menu #smile
+ * toggle (show/hide) the emojis menu when clicking btn smiley
  */
 function toggleEmojis() {
     /* $('#emojis').show(); // #show */

@@ -1,0 +1,210 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+    <head> 
+        <!--Dokument title-->
+        <title>chatter|app</title>
+        
+        <!--Use of UFT-8-->
+        <meta charset="UTF-8">
+        
+                
+        <!--linke jQuery online and lokal-->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="../js/jquery-3.3.1.min.js"></script>
+        
+        <!--external fonts-->
+        <!-- embed the roboto font. This needs to go above your css -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+        <!--font awsom-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <!--linke to external css file-->
+        <link rel="stylesheet" href="../css/style.css"/>
+        
+        <!--linke to external js script-->
+        <script src="../js/script.js"></script>
+        <!--Internal js script-->
+        <script type="text/javascript"></script>
+        
+
+    </head>
+
+    <body>
+        <!--Channel List-->
+        <section id="section-channel-list">
+            <header class="app-bar">
+                <img src="https://ip.lfe.mw.tum.de/sections/moocus.png" alt="chatter|app logo Moocus" id="app-logo-app-bar">
+                <h1 id="app-name-app-bar">
+                    chatter|app
+                </h1>
+            </header>
+            
+            <ul id="channel-list">
+                <div>
+                        <li onclick="switchChannel('#FlatsInGarching')">
+                                &num;FlatsInGarching    <!--channel topic-->
+                                <span>
+                                        <i class="far fa-star"></i>      <!--image of a star for favorit or not: favorit-> filled star-->
+                                        <i class="fas fa-chevron-right"></i>
+                                </span>
+                        </li>
+                        <li onclick="switchChannel('#RestaurantsInMunich')">
+                                &num;RestaurantsInMunich    <!--channel topic-->
+                                <span>
+                                        <i class="far fa-star"></i>      <!--image of a star for favorit or not: favorit-> filled star-->
+                                        <i class="fas fa-chevron-right"></i>
+                                </span>
+                        </li>
+                        <li class="selected" onclick="switchChannel('#NicePlacesInMunich')">
+                                &num;NicePlacesInMunich    <!--channel topic-->
+                                <span>
+                                        <i class="fas fa-star "></i>  <!--image of a star for favorit or not: favorit-> filled star-->
+                                        <i class="fas fa-chevron-right"></i>
+                                </span>
+                        </li>
+                        <li onclick="switchChannel('#Octoberfest')">
+                                &num;Octoberfest    <!--channel topic-->
+                                <span>
+                                        <i class="fas fa-star"></i>  <!--image of a star for favorit or not: favorit-> filled star-->
+                                        <i class="fas fa-chevron-right"></i>
+                                </span>
+                        </li>
+                </div>
+                
+                
+            </ul>
+            <div id="tab-bar">
+                <button type="button" class="button-tab-bar selected" id="button-new-tab-bar" onclick="selectTab('#button-new-tab-bar')">
+                        <i class="far fa-lightbulb"></i>
+                        new
+                </button>
+                <button type="button" class="button-tab-bar" id="button-trending-tab-bar" onclick="selectTab('#button-trending-tab-bar')">
+                        <i class="fas fa-fire"></i>
+                        trending
+                </button>
+                <button type="button" class="button-tab-bar" id="button-favorites-tab-bar" onclick="selectTab('#button-favorites-tab-bar')">
+                                <i class="fas fa-star"></i>
+                        favorites
+                </button>
+            </div>
+            
+
+        </section>       
+
+        <section id="section-chat-area">
+            <header class="app-bar">
+                <h1>
+                        <span id="channel-name">&num;NicePlacesInMunich</span>
+                        <small id="channel-location">
+                                by
+                                <a href="https://map.what3words.com/umriss.tannen.erst" target="_blank" class="w3w-location-chat">    <!--linke to the lokation from wher the post was made the post-->
+                                        umriss.tannen.erst
+                                </a>
+                        </small>
+                        <span>
+                                <i class="fas fa-star "></i>
+                        </span>
+                </h1>
+                
+            </header> 
+            <div id="chat-messages">
+                <div class="single-chat-massage own-message">       <!----> 
+                        <h3 class="chat-messages-metadata">
+                                <a href="https://map.what3words.com/umriss.tannen.erst" target="_blank" class="w3w-location-chat">    <!--linke to the lokation from wher the post was made the post-->
+                                        umriss.tannen.erst
+                                </a>
+                                <span class="chat-message-date">Wed, September 5th,10:00</span>    <!--date and time of the post-->
+                                <em class="messages-ttl">
+                                        15 min. left
+                                </em>
+                        </h3>
+                        <p class="chat-text-messages">
+                                Where is a good place to relax in Munich?
+                        </p>
+                        <button type="button" class="button-messages-ttl">
+                                +5 min.
+                        </button>
+                </div>
+                <div class="single-chat-massage">
+                        <h3 class="chat-messages-metadata">
+                                <a href="https://map.what3words.com/erholung.trage.fehlenden" target="_blank" class="w3w-location-chat">    <!--linke to the lokation from wher the post was made the post-->
+                                        uerholung.trage.fehlenden
+                                </a>
+                                <span class="chat-message-date">Wed, September 5th,10:03</span>    <!--date and time of the post-->
+                                <em class="messages-ttl">
+                                        12 min. left
+                                </em>
+                        </h3>
+                        <p class="chat-text-messages">
+                                I like to go to the Englische Garten.
+                        </p>
+                        <button type="button" class="button-messages-ttl">
+                                +5 min.
+                        </button>
+                </div>
+                <div class="single-chat-massage">
+                        <h3 class="chat-messages-metadata">
+                                <a href="https://map.what3words.com/zange.schwarz.solchen" target="_blank" class="w3w-location-chat">    <!--linke to the lokation from wher the post was made the post-->
+                                        zange.schwarz.solchen
+                                </a>
+                                <span class="chat-message-date">Wed, September 5th,10:10</span>    <!--date and time of the post-->
+                                <em class="messages-ttl">
+                                        5 min. left
+                                </em>
+                        </h3>
+                        <p class="chat-text-messages">
+                                I like to go to the Olympia Park.
+                        </p>
+                        <button type="button" class="button-messages-ttl">
+                                +5 min.
+                        </button>
+                </div>
+                <div class="single-chat-massage">
+                        <h3 class="chat-messages-metadata" >
+                                <a href="https://map.what3words.com/herd.flaschen.geologin" target="_blank" class="w3w-location-chat">    <!--linke to the lokation from wher the post was made the post-->
+                                        herd.flaschen.geologin
+                                </a>
+                                <span class="chat-message-date">Wed, September 5th,10:11</span>    <!--date and time of the post-->
+                                <em class="messages-ttl">
+                                        9 min. left
+                                </em>
+                        </h3>
+                        <p class="chat-text-messages">
+                                The Englische Garten is perfect for that.
+                        </p>
+                        <button type="button" class="button-messages-ttl">
+                                +5 min.
+                        </button>
+                </div>
+                <div class="single-chat-massage">
+                        <h3 class="chat-messages-metadata">
+                                <a href="https://map.what3words.com/diener.schleife.meist" target="_blank" class="w3w-location-chat">    <!--linke to the lokation from wher the post was made the post-->
+                                        diener.schleife.meist
+                                </a>
+                                <span class="chat-message-date">Wed, September 5th,10:16</span>    <!--date and time of the post-->
+                                <em class="messages-ttl">
+                                        21 min. left
+                                </em>
+                        </h3>
+                        <p class="chat-text-messages">
+                                I agree I also like the Englische Garten.
+                        </p>
+                        <button type="button" class="button-messages-ttl">
+                                +5 min.
+                        </button>
+                </div>
+                <div id="chat-bar"> <!-- #6 #smile #show the menu on click -->
+                        <button id="emojis-button" onclick="toggleEmojis()">
+                                <i class="far fa-smile"></i>
+                        </button>
+                        
+                        <div id="emojis">
+                                &#x1F601; &#x1F602; &#x1F603; &#x1F604; &#x1F605; &#x1F606; &#x1F607;
+                        </div>
+                </div>
+            </div>
+
+
+        </section>
+    </body>
+</html>
